@@ -1,0 +1,29 @@
+// sorting array [0,1,1,0,0,1] 
+
+
+const sortArray = (arr) => {
+    let countZero = 0
+    //make a loop for array
+    for (let i=0 ; i < arr.length; i++){
+        //count for number of zero
+        if (arr[i] === 0){
+            countZero++
+        }
+    }
+
+    //add zeros to array
+    //number of zeros comes from above loop
+    for (let i=0; i < countZero;i++){
+        arr[i] = 0;
+    }
+
+    //add in 1 to the remaining array index
+    for(let i = countZero; i < arr.length; i++){
+        arr[i] = 1;
+    }
+
+    return arr;
+
+}
+
+console.log(sortArray([0,1,1,0,0,1]))
